@@ -34,31 +34,30 @@
 # Output: 0
 
 
-
 Success
 Details 
-Runtime: 60 ms, faster than 81.58% of Python3 online submissions for Longest Substring Without Repeating Characters.
-Memory Usage: 14.3 MB, less than 80.52% of Python3 online submissions for Longest Substring Without Repeating Characters.
-Next challenges:
+Runtime: 112 ms, faster than 71.43% of JavaScript online submissions for Longest Substring Without Repeating Characters.
+Memory Usage: 44.7 MB, less than 48.23% of JavaScript online submissions for Longest Substring Without Repeating Characters.
   
   
   
   
   
-  
-  class Solution:
-    def lengthOfLongestSubstring(self, s: str) -> int:
-
-        ans = 0
-        i = 0
-        seen = {}
+var lengthOfLongestSubstring = function(s) {
+    let seen = {}
+    let ans = 0
+    let i =0
+    
+    for(let j =0;j<s.length;j++){
+        let check = s[j]
+        if(seen[check] != undefined){
+            i = Math.max(seen[check],i)
+        }
         
-        for j in range(len(s)):
-            check = s[j]
-            if check in seen:
-                i = max(seen[check],i)
-            
-            ans = max(ans, j-i+1)
-            seen[check] = j+1
-        return ans
+        ans = Math.max(ans,j-i+1)
+        seen[check] = j+1
+    }
+    
+    return ans
+};
         
