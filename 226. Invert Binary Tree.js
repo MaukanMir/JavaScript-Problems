@@ -48,3 +48,47 @@ var invertTree = function(root) {
     }
     return root
 };
+
+
+Success
+Details 
+Runtime: 76 ms, faster than 68.56% of JavaScript online submissions for Invert Binary Tree.
+Memory Usage: 39.9 MB, less than 69.90% of JavaScript online submissions for Invert Binary Tree.
+
+
+
+
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {TreeNode}
+ */
+var invertTree = function(root) {
+    if(!root){return root}
+    if(root){
+        queue = [root]
+    
+        while(queue.length >0){
+            let current_node = queue.pop()
+            if(current_node != null){
+                let temp = current_node.left
+            current_node.left = current_node.right
+            current_node.right = temp
+            queue.push(current_node.left)
+            queue.push(current_node.right)
+            
+                
+            }
+            
+    
+        }
+        return root
+    }
+};
