@@ -51,3 +51,36 @@ var searchBST = function(root, val) {
     
     return root.val > val ? searchBST(root.left,val):searchBST(root.right,val)
 };
+
+
+
+
+
+Success
+Details 
+Runtime: 76 ms, faster than 99.55% of JavaScript online submissions for Search in a Binary Search Tree.
+Memory Usage: 45.1 MB, less than 92.67% of JavaScript online submissions for Search in a Binary Search Tree.
+
+
+
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @param {number} val
+ * @return {TreeNode}
+ */
+var searchBST = function(root, val) {
+    while(root != null && root.val != val){
+        root = root.val > val ? root.left:root.right
+    }
+    return root
+
+};
+
