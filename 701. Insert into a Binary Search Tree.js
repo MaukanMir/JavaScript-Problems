@@ -80,3 +80,35 @@ var insertIntoBST = function(root, val) {
 
 
 
+Success
+Details 
+Runtime: 108 ms, faster than 99.85% of JavaScript online submissions for Insert into a Binary Search Tree.
+Memory Usage: 47.3 MB, less than 48.92% of JavaScript online submissions for Insert into a Binary Search Tree.
+
+
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @param {number} val
+ * @return {TreeNode}
+ */
+var insertIntoBST = function(root, val) {
+    if(root == null){return new TreeNode(val)}
+
+        if(root.val < val){
+            root.right = insertIntoBST(root.right,val)
+        }else{
+            root.left = insertIntoBST(root.left,val)
+        }
+    
+    return root
+};
+
+
