@@ -29,7 +29,10 @@
 // Runtime: 72 ms, faster than 92.19% of JavaScript online submissions for Restore IP Addresses.
 // Memory Usage: 40.6 MB, less than 50.13% of JavaScript online submissions for Restore IP Addresses.
 
-
+// Success
+// Details 
+// Runtime: 68 ms, faster than 98.49% of JavaScript online submissions for Restore IP Addresses.
+// Memory Usage: 40.9 MB, less than 31.99% of JavaScript online submissions for Restore IP Addresses.
 
 /**
  * @param {string} s
