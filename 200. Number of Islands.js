@@ -77,3 +77,53 @@ var numIslands = function(grid) {
     
     return area
 };
+
+
+
+Success
+Details 
+Runtime: 80 ms, faster than 98.21% of JavaScript online submissions for Number of Islands.
+Memory Usage: 41.5 MB, less than 91.17% of JavaScript online submissions for Number of Islands.
+
+
+Without dicitionary and recording visited spots
+
+
+/**
+ * @param {character[][]} grid
+ * @return {number}
+ */
+var numIslands = function(grid) {
+    
+    
+    let ROWS = grid.length
+    let COLS = grid[0].length
+
+    let area = 0
+    
+    var dfs = function(r,c){
+        if(r <0 || r>= ROWS || c <0 || c>= COLS  || grid[r][c] =='0'){
+            return false
+        }
+        
+        grid[r][c] ='0'
+        dfs(r+1,c)
+        dfs(r-1,c)
+        dfs(r,c+1)
+        dfs(r,c-1)
+        return true
+        
+        
+    }
+    
+    
+    for(let r =0; r<ROWS; r++){
+        for(let c = 0; c<COLS; c++){
+            if( grid[r][c] =='1' && dfs(r,c)){
+                area +=1
+            }
+        }
+    }
+    
+    return area
+};
