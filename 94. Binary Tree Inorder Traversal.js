@@ -50,3 +50,37 @@ var inorderTraversal = function(root) {
     }
     return result
 };
+
+
+Success
+Details 
+Runtime: 68 ms, faster than 72.51% of JavaScript online submissions for Binary Tree Inorder Traversal.
+Memory Usage: 42.6 MB, less than 9.62% of JavaScript online submissions for Binary Tree Inorder Traversal.
+
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {number[]}
+ */
+var inorderTraversal = function(root) {
+  
+    var inorder = function(node){
+        if(!node){return}
+        inorder(node.left)
+        result.push(node.val)
+        inorder(node.right)
+    }
+    
+    let result = []
+    
+    inorder(root)
+    return result
+};
+
