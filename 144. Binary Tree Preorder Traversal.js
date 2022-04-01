@@ -57,3 +57,35 @@ var preorderTraversal = function(root) {
     
     return result
 };
+
+
+Success
+Details 
+Runtime: 84 ms, faster than 44.71% of JavaScript online submissions for Binary Tree Preorder Traversal.
+Memory Usage: 42.1 MB, less than 62.72% of JavaScript online submissions for Binary Tree Preorder Traversal.
+
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {number[]}
+ */
+var preorderTraversal = function(root) {
+    if(!root){return []}
+    let result = [], stack = [root]
+    
+    while(stack.length >0){
+        let node = stack.pop()
+        
+        if(node){result.push(node.val)}
+        if(node.right){stack.push(node.right)}
+        if(node.left){stack.push(node.left)}
+    }
+    return result
+    }
