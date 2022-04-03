@@ -53,3 +53,42 @@ var isSameTree = function(p, q) {
     
     return isSameTree(p.left, q.left) && isSameTree(p.right, q.right)
 };
+
+
+Success
+Details 
+Runtime: 64 ms, faster than 84.08% of JavaScript online submissions for Same Tree.
+Memory Usage: 42.5 MB, less than 46.89% of JavaScript online submissions for Same Tree.
+
+
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} p
+ * @param {TreeNode} q
+ * @return {boolean}
+ */
+var isSameTree = function(p, q) {
+    
+    let stack = [[p,q]]
+    
+    while(stack.length >0){
+        let check = stack.pop()
+        let node = check[0], node2 = check[1]
+        
+        if( node && node2 && node.val === node2.val){
+            stack.push([node.left, node2.left])
+            stack.push([node.right, node2.right])
+        }
+        
+        else if( node || node2){return false}
+    }
+    
+    return true
+};
