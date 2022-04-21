@@ -48,3 +48,34 @@ var characterReplacement = function(s, k) {
     }
     return result
 };
+
+
+Success
+Details 
+Runtime: 85 ms, faster than 83.64% of JavaScript online submissions for Longest Repeating Character Replacement.
+Memory Usage: 43.6 MB, less than 40.55% of JavaScript online submissions for Longest Repeating Character Replacement.
+
+/**
+ * @param {string} s
+ * @param {number} k
+ * @return {number}
+ */
+var characterReplacement = function(s, k) {
+    let maxValue =0, count = {}, left = 0, res =0
+    
+    for(let r=0; r< s.length; r++){
+        if(count[s[r]] == undefined){count[s[r]] =1}
+        else if(count[s[r]] != undefined){count[s[r]] +=1}
+        
+        maxValue = Math.max(maxValue, count[s[r]])
+        
+        if( (r - left +1) - maxValue >k ){
+            count[s[left]] -=1
+            left ++
+            
+        }
+        res = Math.max(r-left +1, res)
+    }
+    
+    return res
+};
